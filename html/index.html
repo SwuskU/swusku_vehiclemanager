@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swusku Vehicle Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="vehicle-menu" class="menu-container hidden">
+        <div class="menu-header">
+            <h2 id="menu-title">🚗 Vehicle Manager</h2>
+            <button id="close-btn" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="menu-content">
+            <!-- Quick Actions -->
+            <div class="section">
+                <h3>Quick Actions</h3>
+                <div class="button-grid">
+                    <button id="lock-btn" class="action-btn" data-action="lock">
+                        <i class="fas fa-lock"></i>
+                        <span id="lock-text">Lock/Unlock</span>
+                    </button>
+                    <button id="engine-btn" class="action-btn" data-action="engine">
+                        <i class="fas fa-power-off"></i>
+                        <span id="engine-text">Engine</span>
+                    </button>
+                    <button id="lights-btn" class="action-btn" data-action="lights">
+                        <i class="fas fa-lightbulb"></i>
+                        <span id="lights-text">Lights</span>
+                    </button>
+                    <button id="speed-limiter-btn" class="action-btn" data-action="speedLimiter">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span id="speed-limiter-text">Speed Limiter</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Windows Control -->
+            <div class="section">
+                <h3 id="windows-title">Windows</h3>
+                <div class="control-grid">
+                    <div class="control-group">
+                        <span>Front Left</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="window" data-index="0" data-param="up">
+                                <i class="fas fa-arrow-up"></i>
+                            </button>
+                            <button class="control-btn" data-action="window" data-index="0" data-param="down">
+                                <i class="fas fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <span>Front Right</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="window" data-index="1" data-param="up">
+                                <i class="fas fa-arrow-up"></i>
+                            </button>
+                            <button class="control-btn" data-action="window" data-index="1" data-param="down">
+                                <i class="fas fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <span>Rear Left</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="window" data-index="2" data-param="up">
+                                <i class="fas fa-arrow-up"></i>
+                            </button>
+                            <button class="control-btn" data-action="window" data-index="2" data-param="down">
+                                <i class="fas fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <span>Rear Right</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="window" data-index="3" data-param="up">
+                                <i class="fas fa-arrow-up"></i>
+                            </button>
+                            <button class="control-btn" data-action="window" data-index="3" data-param="down">
+                                <i class="fas fa-arrow-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Doors Control -->
+            <div class="section">
+                <h3 id="doors-title">Doors</h3>
+                <div class="control-grid">
+                    <div class="control-group">
+                        <span>Front Left</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="door" data-index="0" data-param="open">
+                                <i class="fas fa-door-open"></i>
+                            </button>
+                            <button class="control-btn" data-action="door" data-index="0" data-param="close">
+                                <i class="fas fa-door-closed"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <span>Front Right</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="door" data-index="1" data-param="open">
+                                <i class="fas fa-door-open"></i>
+                            </button>
+                            <button class="control-btn" data-action="door" data-index="1" data-param="close">
+                                <i class="fas fa-door-closed"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <span>Rear Left</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="door" data-index="2" data-param="open">
+                                <i class="fas fa-door-open"></i>
+                            </button>
+                            <button class="control-btn" data-action="door" data-index="2" data-param="close">
+                                <i class="fas fa-door-closed"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <span>Rear Right</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="door" data-index="3" data-param="open">
+                                <i class="fas fa-door-open"></i>
+                            </button>
+                            <button class="control-btn" data-action="door" data-index="3" data-param="close">
+                                <i class="fas fa-door-closed"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <span>Hood</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="door" data-index="4" data-param="open">
+                                <i class="fas fa-door-open"></i>
+                            </button>
+                            <button class="control-btn" data-action="door" data-index="4" data-param="close">
+                                <i class="fas fa-door-closed"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <span>Trunk</span>
+                        <div class="control-buttons">
+                            <button class="control-btn" data-action="door" data-index="5" data-param="open">
+                                <i class="fas fa-door-open"></i>
+                            </button>
+                            <button class="control-btn" data-action="door" data-index="5" data-param="close">
+                                <i class="fas fa-door-closed"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Indicators -->
+            <div class="section">
+                <h3 id="indicators-title">Indicators</h3>
+                <div class="button-grid">
+                    <button class="action-btn" data-action="indicator" data-direction="left">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Left</span>
+                    </button>
+                    <button class="action-btn" data-action="indicator" data-direction="right">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Right</span>
+                    </button>
+                    <button class="action-btn" data-action="indicator" data-direction="hazard">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Hazard</span>
+                    </button>
+                    <button class="action-btn" data-action="cruiseControl">
+                        <i class="fas fa-cruise-control"></i>
+                        <span id="cruise-control-text">Cruise Control</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-footer">
+            <div class="keybind-hints">
+                <span><kbd>F6</kbd> Menu</span>
+                <span><kbd>U</kbd> Lock</span>
+                <span><kbd>G</kbd> Engine</span>
+                <span><kbd>L</kbd> Lights</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
